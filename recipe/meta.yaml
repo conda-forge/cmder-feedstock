@@ -28,7 +28,6 @@ about:
     - cmder/vendor/git-for-windows/usr/share/licenses/perl-TermReadKey/LICENSE
     - cmder/vendor/git-for-windows/usr/share/licenses/mintty/LICENSE
     - cmder/vendor/git-for-windows/mingw64/share/licenses/libsystre/LICENSE
-    - cmder/vendor/clink/LICENSE
     - cmder/vendor/git-for-windows/usr/share/licenses/dos2unix/LICENSE
     - cmder/vendor/git-for-windows/usr/share/licenses/openssh/LICENCE
     - cmder/vendor/git-for-windows/usr/share/licenses/unzip/LICENSE
