@@ -1,4 +1,4 @@
-{% set version = "1.3.18" %}
+{% set version = "1.3.20" %}
 
 package:
   name: cmder
@@ -7,7 +7,7 @@ package:
 source:
   url: https://github.com/cmderdev/cmder/releases/download/v{{ version }}/cmder.zip
   folder: cmder
-  sha256: 13e414b7f752befff7e5192c505081c73d8e2eab46b69f3c193b3526ac2d1010
+  sha256: 85aae1d07cf93f106a85adb2bdb73b4969cb0273628fe010d9d126d16d5d3370
 
 build:
   number: 0
