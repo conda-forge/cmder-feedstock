@@ -10,13 +10,27 @@ source:
   sha256: 13e414b7f752befff7e5192c505081c73d8e2eab46b69f3c193b3526ac2d1010
 
 build:
-  number: 0
+  number: 1
   detect_binary_files_with_prefix: true
   skip: true  # [not win]
+
+requirements:
+  host:
+    - ca-certificates >=2026.10.19
+  run:
+    - ca-certificates >=2026.10.19
 
 test:
   commands:
     - if not exist %PREFIX%\\cmder\\Cmder.exe exit 1    # [win]
+    - if exist %PREFIX%\\cmder\\vendor\\git-for-windows\\etc\\pki\\ca-trust\\extracted exit 1    # [win]
+    - if exist %PREFIX%\\cmder\\vendor\\git-for-windows\\mingw64\\etc\\pki\\ca-trust\\extracted exit 1    # [win]
+    - if exist %PREFIX%\\cmder\\vendor\\git-for-windows\\usr\\share\\pki\\ca-trust-source\\ca-bundle.trust.crt exit 1    # [win]
+    - if exist %PREFIX%\\cmder\\vendor\\git-for-windows\\mingw64\\share\\pki\\ca-trust-source\\ca-bundle.trust.crt exit 1    # [win]
+    - fc /b %PREFIX%\\cmder\\vendor\\git-for-windows\\usr\\ssl\\cert.pem %PREFIX%\\Library\\ssl\\cacert.pem    # [win]
+    - fc /b %PREFIX%\\cmder\\vendor\\git-for-windows\\mingw64\\ssl\\cert.pem %PREFIX%\\Library\\ssl\\cacert.pem    # [win]
+    - if not exist %PREFIX%\\etc\\conda\\activate.d\\cmder-activate.bat exit 1    # [win]
+    - if not exist %PREFIX%\\etc\\conda\\deactivate.d\\cmder-deactivate.bat exit 1    # [win]
 
 about:
   home: https://cmder.net/
